@@ -3,8 +3,13 @@ import { createCard, createModal } from './createElements.js';
 
 const cardList = document.body.querySelector('.content__list');
 const modal = document.body.querySelector('.modal');
+const select = document.body.querySelector('.content__select');
 
-const addCardsOnPage = () => {
+cardInfo.sort((a, b) => (a.title > b.title ? 1 : -1));
+
+const addCardsOnPage = (cardInfo) => {
+  cardList.querySelectorAll('.cards__item').forEach((elem) => elem.remove());
+
   for (let i = 0; i < cardInfo.length; i++) {
     const { title, url } = cardInfo[i];
     cardList.append(createCard(title, url, i));
@@ -33,8 +38,19 @@ const closeModal = () => {
   modalCard.querySelector('.modal-card__desc').remove();
 };
 
-addCardsOnPage();
+const sortByName = (event) => {
+  if (event.target.value === 'az') {
+    cardInfo.sort((a, b) => (a.title > b.title ? 1 : -1));
+  } else {
+    cardInfo.sort((a, b) => (a.title > b.title ? -1 : 1));
+  }
+  addCardsOnPage(cardInfo);
+};
+
+addCardsOnPage(cardInfo);
 
 cardList.addEventListener('click', openCard);
 
 modal.querySelector('.modal-card__close').addEventListener('click', closeModal);
+
+select.addEventListener('change', sortByName);

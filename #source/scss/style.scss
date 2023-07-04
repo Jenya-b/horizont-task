@@ -30,6 +30,24 @@ body {
     column-gap: 30px;
     row-gap: 40px;
   }
+
+  &__sort {
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 10px;
+  }
+
+  &__select {
+    background: none;
+    color: #ffffff;
+
+    option {
+      color: #000;
+    }
+  }
 }
 
 .cards {

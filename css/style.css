@@ -128,6 +128,31 @@ body {
   row-gap: 40px;
 }
 
+.content__sort {
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+.content__select {
+  background: none;
+  color: #ffffff;
+}
+
+.content__select option {
+  color: #000;
+}
+
 .cards__item {
   display: -webkit-box;
   display: -ms-flexbox;
